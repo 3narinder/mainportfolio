@@ -6,6 +6,7 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ProjectCard = ({
   index,
@@ -14,6 +15,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  url,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -29,7 +31,7 @@ const ProjectCard = ({
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-contain rounded-2xl"
           />
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
@@ -47,18 +49,27 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            <a
+              href={url}
+              target="_blank"
+              className="text-white font-bold text-[12px]"
+            >
+              <FaExternalLinkAlt className="text-sm text-red-300 cursor-pointer" />
+            </a>
+          </div>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
+        <div className="mt-4 flex items-center justify-start flex-wrap gap-2">
+          {tags?.map((tag) => (
+            <img
+              key={tag?.name}
+              src={tag?.name}
+              alt={tag?.name}
+              className="h-8 w-8"
+            />
           ))}
         </div>
       </Tilt>
@@ -86,7 +97,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

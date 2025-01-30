@@ -7,11 +7,24 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { toast } from "react-toastify";
+import { IoMdCall, IoMdMail } from "react-icons/io";
 
 const Contact = () => {
   const formRef = useRef();
 
-  // const { alert, showAlert, hideAlert } = useAlert();
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    toast.success(` ${text} copied`, {
+      position: "top-right",
+      autoClose: 1000, // Auto close after 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      style: { backgroundColor: "#355169", color: "#fff" },
+    });
+  };
 
   const [form, setForm] = useState({
     name: "",
@@ -92,7 +105,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden relative`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}

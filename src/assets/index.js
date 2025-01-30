@@ -22,6 +22,8 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import threejsLight from "./tech/threejs_light.svg";
+import nextjs from "./tech/nextjs.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -33,8 +35,11 @@ import carrent from "./carrent.png";
 import arktastic from "./arktastic.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import custom from "./3-Dcustom.png";
+import omnifood from "./omnifood.png";
 
 export {
+  nextjs,
   arktastic,
   roomBuddy,
   logo,
@@ -67,4 +72,7 @@ export {
   tripguide,
   copyIcon,
   downloadIcon,
+  threejsLight,
+  custom,
+  omnifood,
 };

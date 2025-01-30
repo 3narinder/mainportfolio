@@ -5,7 +5,6 @@ import { navLinks } from "../constants";
 import { reactjs, menu, close, copyIcon, downloadIcon } from "../assets";
 import { IoMdCall, IoMdMail } from "react-icons/io";
 import { toast } from "react-toastify";
-import { FaDownload, FaLinkedin } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -75,24 +74,6 @@ const Navbar = () => {
             <IoMdMail className="" />
             <span className="hidden sm:flex">narinderd9@gmail.com</span>
           </div>
-
-          <a
-            className="flex items-center gap-1 cursor-pointer text-secondary"
-            target="_blank"
-            href="https://www.linkedin.com/in/narinder-kumar-3216a9153"
-          >
-            <FaLinkedin className="" />
-            <span className="hidden sm:flex">LinkedIn</span>
-          </a>
-
-          <a
-            href="/NarinderResume.pdf"
-            download
-            className="flex items-center gap-1 text-secondary cursor-pointer"
-          >
-            <FaDownload className="" />
-            <span className=" hidden sm:flex">Download Resume</span>
-          </a>
         </div>
 
         <ul className="list-none hidden sm:flex flex-row gap-10">

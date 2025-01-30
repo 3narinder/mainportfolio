@@ -25,6 +25,10 @@ import {
   jobit,
   tripguide,
   threejs,
+  nextjs,
+  threejsLight,
+  custom,
+  omnifood,
 } from "../assets";
 
 export const navLinks = [
@@ -120,7 +124,7 @@ const experiences = [
   {
     title: "ReactJs Developer",
     company_name: "Digimantra Labs",
-    icon: shopify,
+    icon: reactjs,
     iconBg: "#383E56",
     date: "April 2024 - Dec 2024",
     points: [
@@ -133,7 +137,7 @@ const experiences = [
   {
     title: "FrontEnd Developer",
     company_name: "Arktastic",
-    icon: tesla,
+    icon: mongodb,
     iconBg: "#E6DEDD",
     date: "May 2022 - Apr 2024",
     points: [
@@ -146,7 +150,7 @@ const experiences = [
   {
     title: "Jr.FrontEnd Developer",
     company_name: "RoomBuddy",
-    icon: roomBuddy,
+    icon: tailwind,
     iconBg: "#383E56",
     date: "February 2022 - May 2022",
     points: [
@@ -207,62 +211,68 @@ const projects = [
       "An Australian Marketplace, We are a Digital Shopping Centre. We are working on providing People, digital access to any local markets across the continents. We welcome you to the Arktastic Network.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: reactjs,
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
+        name: mongodb,
       },
       {
-        name: "tailwind",
-        color: "pink-text-gradient",
+        name: tailwind,
+      },
+      {
+        name: nextjs,
+      },
+      {
+        name: typescript,
+      },
+      {
+        name: redux,
       },
     ],
     image: arktastic,
     source_code_link: "https://github.com/",
+    url: "https://www.arktastic.com/",
   },
   {
-    name: "Job IT",
+    name: "3DClothing Customizer",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "The Three.js 3D Clothing Customizer is an interactive tool that allows users to upload a logo and change the color of 3D clothing models in real-time.",
     tags: [
       {
-        name: "react",
+        name: threejsLight,
+      },
+      {
+        name: reactjs,
+      },
+      {
+        name: tailwind,
+      },
+    ],
+    image: custom,
+    source_code_link: "https://github.com/",
+    url: "https://cutom-cloths.netlify.app/",
+  },
+  {
+    name: "Omnifood",
+    description:
+      "The Healthy Food Delivery Restaurant static page showcases a clean and vibrant design focused on offering nutritious meal options. It features a menu of healthy meals, detailed descriptions, and nutritional information for each dish.",
+    tags: [
+      {
+        name: html,
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: css,
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: javascript,
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: omnifood,
     source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    url: "https://omnifood-sr.netlify.app/",
   },
 ];
 
