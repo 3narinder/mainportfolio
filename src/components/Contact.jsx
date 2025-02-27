@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -7,7 +7,6 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { toast } from "react-toastify";
-import { IoMdCall, IoMdMail } from "react-icons/io";
 
 const Contact = () => {
   const formRef = useRef();
@@ -44,63 +43,58 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    //service_wfwwc5e
-    //template_f9aheok
-    emailjs
-      .send(
+    try {
+      const response = await emailjs.send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         {
-          from_name: form.name,
+          from_name: form?.name,
           to_name: "Narinder Kumar",
-          from_email: form.email,
+          from_email: form?.email,
           to_email: "narinderd9@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          toast.success(`Message has been sent`, {
-            position: "top-right",
-            autoClose: 1000, // Auto close after 3 seconds
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            style: { backgroundColor: "#355169", color: "#fff" },
-          });
-
-          setTimeout(() => {
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          toast.failed(`unable to send message`, {
-            position: "top-right",
-            autoClose: 1000, // Auto close after 3 seconds
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            style: { backgroundColor: "#355169", color: "#fff" },
-          });
-        }
       );
+
+      setLoading(false);
+      toast.success(`Message has been sent`, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: { backgroundColor: "#355169", color: "#fff" },
+      });
+
+      setTimeout(() => {
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }, 3000);
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+
+      toast.error(`Unable to send message`, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: { backgroundColor: "#355169", color: "#fff" },
+      });
+    }
   };
 
   return (
@@ -152,8 +146,9 @@ const Contact = () => {
           </label>
 
           <button
+            disabled={loading}
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary cursor-pointer"
           >
             {loading ? "Sending..." : "Send"}
           </button>
