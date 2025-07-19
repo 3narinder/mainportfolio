@@ -1,3 +1,4 @@
+import React from "react";
 import {
   mobile,
   backend,
@@ -14,16 +15,7 @@ import {
   mongodb,
   git,
   figma,
-  docker,
-  meta,
-  starbucks,
   arktastic,
-  roomBuddy,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
   nextjs,
   threejsLight,
@@ -51,10 +43,10 @@ const services = [
     title: "Web Developer",
     icon: web,
   },
-  // {
-  //   title: "React Native Developer",
-  //   icon: mobile,
-  // },
+  {
+    title: "React Native Developer",
+    icon: mobile,
+  },
   {
     title: "Backend Developer",
     icon: backend,
@@ -87,6 +79,10 @@ const technologies = [
     icon: reactjs,
   },
   {
+    name: "React Native",
+    icon: reactjs,
+  },
+  {
     name: "Redux Toolkit",
     icon: redux,
   },
@@ -114,13 +110,22 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
 ];
 
 const experiences = [
+  {
+    title: "Frontend Developer",
+    company_name: "Creative I Technologies",
+    icon: reactjs,
+    iconBg: "#383E56",
+    date: "Sept 2024 - Mar 2025",
+    points: [
+      "Designed and developed interactive and responsive web applications using React, Next.js, and modern frontend tools.",
+      "Collaborated with clients and teams to deliver custom solutions for diverse freelance and contract-based projects.",
+      "Optimised application performance, ensuring fast load times and seamless user experience across devices.",
+      "Implemented reusable components and clean UI designs, maintaining code quality and project scalability.",
+    ],
+  },
   {
     title: "ReactJs Developer",
     company_name: "Digimantra Labs",
@@ -161,20 +166,6 @@ const experiences = [
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
-
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
 ];
 
 const testimonials = [
